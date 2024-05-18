@@ -16,10 +16,18 @@
   tags:
     - install-nginx
 
+- name: stop nginx
+  service:
+    name: nginx
+    state: stopped
+  notify: Check HTTP Service
+  tags:
+    - always
+
 - name: Restart nginx
   service:
     name: nginx
-    state: restarted
+    state: stopped
   notify: Check HTTP Service
   tags:
     - always
