@@ -4,16 +4,17 @@
   become: yes
   gather_facts: false
   vars:
-    - user: Sanga
+    - user: testing
     - password: Unix@2020
+    - dir_name: ansible_dir1
 
   tasks:
     - name: Creates directory
       file:
-        path: "/home/{{ user }}/demoDIR"
+        path: "/Users/beginneracademy/Downloads/Desktop/beginner.academy/Docker_Ext/new/ansible/{{ user }}/{{ dir_name }}"
         state: directory
 
     - name: copy src.txt as dest.txt in the same dir
       copy:
         src: /tmp/src.txt
-        dest: "/home/{{ user }}/demoDIR/Dest.txt"
+        dest: "/Users/beginneracademy/Downloads/Desktop/beginner.academy/Docker_Ext/new/ansible/{{ user }}/{{ dir_name }}/Dest.txt"
