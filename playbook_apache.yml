@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - apache
+  vars:
+    - doc_root: /var/www/example
+    - user: Sanga
+    - password: Unix@2020

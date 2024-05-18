@@ -1,0 +1,38 @@
+---
+- name: Create user on a linux server
+  hosts: localhost
+  become: yes
+  gather_facts: false
+  vars:
+    - user: Sanga
+    - password: Unix@2020
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: "/home/{{ user }}/demoDIR"
+        state: directory
+
+    - name: copy src.txt as dest.txt in the same dir
+      copy:
+        src: /tmp/src.txt
+        dest: "/home/{{ user }}/demoDIR/Dest.txt"
+---
+- name: Create user on a linux server
+  hosts: localhost
+  become: yes
+  gather_facts: false
+  vars:
+    - user: Sanga
+    - password: Unix@2020
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: "/home/{{ user }}/demoDIR"
+        state: directory
+
+    - name: copy src.txt as dest.txt in the same dir
+      copy:
+        src: /tmp/src.txt
+        dest: "/home/{{ user }}/demoDIR/Dest.txt"
