@@ -2,9 +2,7 @@
 - hosts: all
   become: true
   roles:
-    - frontend
-    - backend
-    - db
+    - apache
   vars:
     - doc_root: /var/www/example
     - user: Sanga
